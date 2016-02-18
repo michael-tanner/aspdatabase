@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A86537A-9DBC-4228-BD7F-A4C572D1B563}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ASPdatabaseNET_Web</RootNamespace>
+    <AssemblyName>ASPdatabaseNET</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="ASPdb_AppData-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=.\SQL2012%3bInitial Catalog=ASPdb_AppData%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\ASPdb_AppData-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.5073.29922, Culture=neutral, PublicKeyToken=6bcd409ee6bc9292, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\BCrypt.Net.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.7.4114.6375, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\BouncyCastle.Crypto.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EPPlus, Version=3.1.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SharpKit.Html, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2575297a09c47a96, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpKit.JavaScript, Version=1.5.0.0, Culture=neutral, PublicKeyToken=2575297a09c47a96, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpKit.jQuery, Version=1.6.4.0, Culture=neutral, PublicKeyToken=2575297a09c47a96, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_ASPdatabaseNET\UI\Assets\Graphics\Sprite1.png" />
+    <EmbeddedResource Include="_ASPdatabaseNET\UI\Assets\Graphics\favicon.ico" />
+    <EmbeddedResource Include="_ASPdatabaseNET\UI\Assets\SubscriptionAgreement.html" />
+    <EmbeddedResource Include="_ASPdatabaseNET\UI\Assets\SubscriptionAgreement.2.0.0.html" />
+    <EmbeddedResource Include="_ASPdatabaseNET\UI\Assets\JsText.js" />
+    <None Include="Properties\PublishProfiles\net_ASPdatabase_Package.pubxml" />
+    <None Include="_ASPdatabaseNET\UI\Assets\JS\ASPdb.js" />
+    <None Include="_ASPdatabaseNET\UI\Assets\JS\Security\aes.js" />
+    <None Include="_ASPdatabaseNET\UI\Assets\JS\ASPdatabase.NET.js" />
+    <None Include="_ASPdatabaseNET\UI\Assets\JS\jquery-1.8.0.min.js" />
+    <None Include="_ASPdatabaseNET\UI\Assets\JS\jquery-ui-1.10.4.custom.min.js" />
+    <None Include="_ASPdatabaseNET\UI\Assets\JS\jquery.json-2.3.js" />
+    <None Include="_ASPdatabaseNET\UI\Assets\JS\Security\jsencrypt.min.js" />
+    <None Include="_ASPdatabaseNET\UI\Assets\JS\Security\pbkdf2.js" />
+    <Content Include="ASPdatabase.NET.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ASPdatabase.NET.aspx.cs">
+      <DependentUpon>ASPdatabase.NET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPdatabase.NET.aspx.designer.cs">
+      <DependentUpon>ASPdatabase.NET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\Config\ASPdb_Values.cs" />
+    <Compile Include="_ASPdatabaseNET\Config\SystemProperties.cs" />
+    <Compile Include="_ASPdatabaseNET\DataAccess\DatabaseConnectionsCRUD.cs" />
+    <Compile Include="_ASPdatabaseNET\DataAccess\ManageAssetsCRUD.cs" />
+    <Compile Include="_ASPdatabaseNET\DataAccess\NavCRUD.cs" />
+    <Compile Include="_ASPdatabaseNET\DataAccess\SQLObjectsCRUD.cs" />
+    <Compile Include="_ASPdatabaseNET\DataAccess\TableDesignCRUD.cs" />
+    <Compile Include="_ASPdatabaseNET\Subscription\Objs\CheckAppVersionResponse.cs" />
+    <Compile Include="_ASPdatabaseNET\Subscription\Objs\CheckSubscriptionResponse.cs" />
+    <Compile Include="_ASPdatabaseNET\Subscription\Objs\SiteIdObj.cs" />
+    <Compile Include="_ASPdatabaseNET\Subscription\Objs\SubscriptionsHistoryItem.cs" />
+    <Compile Include="_ASPdatabaseNET\Subscription\SubscriptionAppState.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\Assets\JsText.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\Errors\ExceptionHandler.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\GlobalParts\Backend\LogoBoxLogic.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\GlobalParts\LogoBox.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\GlobalParts\Objs\LogoBoxModel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\About\Backend\AboutPageLogic.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\About\Objs\AboutPageInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\HomePage\Backend\HomePageLogic.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\HomePage\Objs\HomePageInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Install\Backend\InstallLogic.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Install\InstallMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Install\Objs\InstallInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Install\Objs\InstallViewModel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\MyAccount\Backend\MyAccountLogic.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\MyAccount\Objs\MyAccountInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Record\Backend\HistoryLogic.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Record\Backend\RecordLogic.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Record\FieldUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Record\HistoryUI\HistoryMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Record\HistoryUI\HistoryMenuItem.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Record\Objs\FieldValue.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Record\Objs_History\HistorySummary.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Record\Objs_History\HistoryJsonObj.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Record\Objs_History\Item.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Record\Objs_History\HistoryRecord.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Record\Objs\RecordInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Record\Objs\RecordViewModel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Record\Objs_History\Item_3Values.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Record\RecordMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\SendFeedback\Backend\FeedbackLogic.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\SendFeedback\Objs\FeedbackInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Subscription\Backend\SubscriptionLogic.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Subscription\Objs\SubscriptionInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\AppPropertiesPanel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\AppProperties\Backend\AppPropertiesLogic.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\AppProperties\Objs\AppPropertiesItem.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\AppProperties\Objs\DropdownList.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\AppProperties\UIParts\AppPropertyItemUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\AppProperties\UIParts\EditAppItem.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\ColumnsRow_TypeSelector.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\ColumnsRow_TypeSelectorItem.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\AppProperties\Objs\AppPropertiesInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\PrimaryKeyRow.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\Backend\UsersLogic.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\MenuItemUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\Objs\GroupInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\Objs\Permission.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\Objs\UserInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\Objs\UsersMenuIno.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\Objs\UsersMenuItem.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\Objs\UsersViewModel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\Objs\UserToGroup_Assignment.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\Panel_GroupUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\Panel_GroupUI_ConnectionItem.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\Panel_GroupUI_PermissionItem.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\Panel_UserUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\Panel_UserUI_GroupItem.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\Panel_UserUI_ResetPassword.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\Backend\ImportExportLogic.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\Backend\TableGridLogic.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\BaseSQLObjects\BaseViewInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\CustomizeView\CustomizeView_ViewModel.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\DatabaseConnections\DatabaseConnectionResponse.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\DatabaseConnections\DatabaseShortInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\BaseSQLObjects\BaseTableInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\ManageAssets\BasicAssetInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\ManageAssets\AssetsLists.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\ManageAssets\ManageAssetResponse.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\Nav\NavDatabaseInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\Nav\NavSectionInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\Nav\NavSectionItemInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\Nav\NavSiteInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\SQLObjects\ASPdb_Connection.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\SQLObjects\ASPdb_Table.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\SQLObjects\ASPdb_View.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\TableDesign\TableDesignResponse.cs" />
+    <Compile Include="_ASPdatabaseNET\DataObjects\TableDesign\TableInfo_Brief.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\ImportExportUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\ImportExportUI_UploadExcel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\Objs\FilterAndSort.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\Objs\GridHeaderItem.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\Objs\GridRequest.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\Objs\GridResponse.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\Objs\GridRow.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\Objs\GridViewModel.cs" />
+    <Compile Include="_ASPdatabaseNET\DbInterfaces\GenericInterface.cs" />
+    <Compile Include="_ASPdatabaseNET\DbInterfaces\DbInterfaceObjects\SchemaInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\DbInterfaces\SQLServerInterface.cs" />
+    <Compile Include="_ASPdatabaseNET\DbInterfaces\SQLServer_SQLBuilders.cs" />
+    <Compile Include="_ASPdatabaseNET\DbInterfaces\TableObjects\Column.cs" />
+    <Compile Include="_ASPdatabaseNET\DbInterfaces\TableObjects\DefaultConstraint.cs" />
+    <Compile Include="_ASPdatabaseNET\DbInterfaces\TableObjects\Enums.cs" />
+    <Compile Include="_ASPdatabaseNET\DbInterfaces\TableObjects\ForeignKey.cs" />
+    <Compile Include="_ASPdatabaseNET\DbInterfaces\TableObjects\ForeignKeysPair.cs" />
+    <Compile Include="_ASPdatabaseNET\DbInterfaces\TableObjects\Identity.cs" />
+    <Compile Include="_ASPdatabaseNET\DbInterfaces\TableObjects\Index.cs" />
+    <Compile Include="_ASPdatabaseNET\DbInterfaces\TableObjects\PrimaryKey.cs" />
+    <Compile Include="_ASPdatabaseNET\DbInterfaces\TableObjects\TableStructure.cs" />
+    <Compile Include="_ASPdatabaseNET\Memory\AppCache.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\GlobalParts\LeftNav.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\GlobalParts\LeftNavParts\DatabaseBox.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\GlobalParts\LeftNavParts\SectionBox.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\GlobalParts\SettingsMenu.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\GlobalParts\TopBar.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\ConnectionProperties\ConnectionPropertiesBttns.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\ConnectionProperties\ConnectionPropertiesMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\EditViewSettings\ViewSettings_ColumnRow.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\EditViewSettings\ViewSettings_SectionRow.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Login\LoginMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\ManageAssets\SchemasPanel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\ManageAssets\SchemasPanel_MenuRow.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\ManageAssets\SQLViewsPanel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\ManageAssets\SQLViewsPanel_MenuRow.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\ManageAssets\TablesPanel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\ManageAssets\TablesPanel_MenuRow.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\SendFeedback\SendFeedbackMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\HomePage\HomePageMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\ColumnsPanel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\ColumnsRow.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\ForeignKeysEdit_ColumnsSelector.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\ForeignKeysItem.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\ForeignKeysEdit.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\IndexesNew.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\IndexesPanel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\ForeignKeysPanel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\IndexesRow.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\IndexesSubColumnSelector.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\PrimaryKeyPanel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\TableDesignMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TableDesign\TableDesign_ViewModel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TablePermissions\TablePermissionProperties.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TablePermissions\TablePermissionsMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\TablePermissions\TablePermissionsMenu.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\EditViewSettings\EditViewSettingsMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PagesFramework\BasePage.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PagesFramework\IPage.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PagesFramework\PageIdentifier.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\Pages\OtherSamplePage.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\Pages\EverythingPage.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\About\AboutMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Connections\ConnectionsMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\ManageAssets\ManageAssetsMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\MyAccount\MyAccountMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\OtherSettings\OtherSettingsMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Subscription\SubscriptionMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PageParts\Users\UsersMainUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\GridToolBar.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\Objs\ImportExcelInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\Objs\ImportExportViewModel.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\Objs\UniqueRowKey.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\Objs\ViewOptions_FilterField.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\Objs\ViewOptions_SortField.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\RecordViewerUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\RowUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\TableGridMain.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\ViewOptions.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\ViewOptions_SortUI.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\TableGrid\ViewOptions_FilterUI.cs" />
+    <Compile Include="_ASPdatabaseNET\Users\AllPermissionsInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\Users\PermissionValues.cs" />
+    <Compile Include="_ASPdatabaseNET\Users\UserInfo.cs" />
+    <Compile Include="_ASPdatabaseNET\Users\UserSessionServer.cs" />
+    <Compile Include="_ASPdatabaseNET\Users\UserSessionLogic.cs" />
+    <Compile Include="_ASPdatabaseNET\Users\UserSessionClient.cs" />
+    <Compile Include="_ASPdb\Ajax\AjaxHelper.cs" />
+    <Compile Include="_ASPdb\Ajax\AjaxRequest.cs" />
+    <Compile Include="_ASPdb\Ajax\AjaxResponse.cs" />
+    <Compile Include="_ASPdb\Ajax\AjaxResponse_Generic.cs" />
+    <Compile Include="_ASPdb\Ajax\AjaxReturnInfo.cs" />
+    <Compile Include="_ASPdb\Ajax\AjaxServiceProxy.cs" />
+    <Compile Include="_ASPdb\Authentication\UserInfo.cs" />
+    <Compile Include="_ASPdb\Config\SharpKitConfig.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\Arr.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\Coms\RadioMenu.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\Cookies.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\ErrorHandler.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\ErrorInfo.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\EventInfo.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\Evt.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\IntStatic.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\JsEventDelegate.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\JsEvent_BeforeAfter.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\JsHelper.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\JsObj.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\JsStr.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\MRBPattern.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\MRBPatternLite.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\MRB\GenericUIList.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\MRB\GenericUIListItem.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\MRB\IMRBPattern.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\MRB\IMRBPattern2.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\MRB\ModelBindingHelper.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\MRB\ModelBinding_EventsHelper.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\MRB\ModelListCommand.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\MRB\ModelPropertyInfo.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\QueryString.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\st.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\StringClass.cs" />
+    <Compile Include="_ASPdb\FrameworkUI\StringStatic.cs" />
+    <Compile Include="_ASPdb\Framework\Debug.cs" />
+    <Compile Include="_ASPdb\Framework\DictStringKey.cs" />
+    <Compile Include="_ASPdb\Framework\Http.cs" />
+    <Compile Include="_ASPdb\Framework\Int2.cs" />
+    <Compile Include="_ASPdb\Framework\Str.cs" />
+    <Compile Include="_ASPdb\Framework\Validation.cs" />
+    <Compile Include="_ASPdb\Security\AESKeyInfo.cs" />
+    <Compile Include="_ASPdb\Security\AESLogic.cs" />
+    <Compile Include="_ASPdb\Security\AjaxReceiver.cs" />
+    <Compile Include="_ASPdb\Security\AjaxSender.cs" />
+    <Compile Include="_ASPdb\Security\BCrypt.cs" />
+    <Compile Include="_ASPdb\Security\MachineEncryption.cs" />
+    <Compile Include="_ASPdb\Security\RsaKeyConverter.cs" />
+    <Compile Include="_ASPdb\Security\RSALogic.cs" />
+    <Compile Include="_ASPdb\Security\Util.cs" />
+    <Compile Include="_ASPdb\UniversalADO\CoreDbConfig.cs" />
+    <Compile Include="_ASPdb\UniversalADO\DbConnectionCommand.cs" />
+    <Compile Include="_ASPdb\UniversalADO\DbEnums.cs" />
+    <Compile Include="_ASPdb\UniversalADO\DbReaderWrapper.cs" />
+    <Compile Include="_ASPdb\UniversalADO\UniversalADO.cs" />
+    <Compile Include="_ASPdatabaseNET\AjaxService\ASPdatabaseService.cs" />
+    <Compile Include="_ASPdatabaseNET\Config\SharpKitConfig.cs" />
+    <Compile Include="_ASPdatabaseNET\UI\PagesFramework\DefaultAspxPage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\net_ASPdatabase_MyData.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="_ASPdatabaseNET\DataObjects\TableGrid\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="$(MSBuildBinPath)\SharpKit\5\SharpKit.Build.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49280/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

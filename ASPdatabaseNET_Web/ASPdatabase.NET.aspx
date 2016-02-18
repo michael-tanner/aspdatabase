@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ASPdatabase.NET.aspx.cs" Inherits="ASPdatabaseNET_Web.ASPdatabase_NET" ValidateRequest="false" %>
